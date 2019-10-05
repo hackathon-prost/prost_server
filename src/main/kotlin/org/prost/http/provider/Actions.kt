@@ -27,4 +27,8 @@ object Actions {
     val getEventsOrganization by lazy { GetEventsOrganization(Repositories.events, Repositories.organizations) }
 
     val getEventsByName by lazy { GetEventsByName(Repositories.events) }
+
+    val getUserPostulations by lazy { GetUserPostulations(Repositories.userEvents, Repositories.events) }
+
+    val getUser by lazy { GetUser(Repositories.users) }
 }

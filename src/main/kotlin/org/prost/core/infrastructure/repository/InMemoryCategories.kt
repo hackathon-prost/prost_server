@@ -16,7 +16,8 @@ class InMemoryCategories : Categories {
     }
 
     private val categories = mutableSetOf<Category>(
-        Category("ENVIRONMENT")
+        Category("ENVIRONMENT"),
+        Category("ANIMALS")
     )
 
     override fun add(category: Category): Completable {

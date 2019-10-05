@@ -2,9 +2,7 @@ package org.prost.http.mapper
 
 import io.vertx.core.json.JsonArray
 import io.vertx.core.json.JsonObject
-import org.prost.core.domain.Event
-import org.prost.core.domain.Organization
-import org.prost.core.domain.User
+import org.prost.core.domain.*
 
 private const val ID = "id"
 private const val EMAIL = "email"
@@ -50,4 +48,17 @@ fun Event.toJson(): JsonObject {
         .put(CREATED_AT, createdAt)
         .put(START_DATE, startDate)
         .put(IMAGE, image)
+}
+
+fun UserEvent.toJson(): JsonObject {
+    return JsonObject()
+        .put("eventId", eventId)
+        .put("userId", userId)
+        .put("approved", approved)
+}
+
+fun UserEventResponse.toJson(): JsonObject {
+    return JsonObject()
+        .put("event", event.toJson())
+        .put("status", userEvent.toJson())
 }

@@ -9,9 +9,10 @@ import org.prost.core.domain.Users
 class InMemoryUsers : Users {
 
     private val users = mutableMapOf<String, User>(
-        Pair(
-            "carlos@test.com", User("anUserId", "carlos@test.com", "AIHcm9tS0E3CADbb2DE+0FU=", "Carlos", "Montes", "555-1234543", "Software Engineer", 723088800000, listOf())
-        )
+        Pair("carlos@test.com", User("anUserId", "carlos@test.com", "AIHcm9tS0E3CADbb2DE+0FU=", "Carlos", "Montes", "555-1234543", "Software Engineer", 723088800000, listOf())),
+        Pair("fer@test.com", User("anUserId2", "fer@test.com", "AIHcm9tS0E3CADbb2DE+0FU=", "Fernando", "", "555-1234543", "FrontEnd Developer", 723088800000, listOf())),
+        Pair("lau@test.com", User("anUserId3", "lau@test.com", "AIHcm9tS0E3CADbb2DE+0FU=", "Lautaro", "Lobo", "555-1234543", "FrontEnd Developer", 723088800000, listOf())),
+        Pair("rodri@test.com", User("anUserId4", "rodri@test.com", "AIHcm9tS0E3CADbb2DE+0FU=", "Rodrigo", "", "555-1234543", "FrontEnd Developer", 723088800000, listOf()))
     )
 
     override fun add(user: User): Completable {

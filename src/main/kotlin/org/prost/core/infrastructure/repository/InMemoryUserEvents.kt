@@ -11,7 +11,11 @@ class InMemoryUserEvents : UserEvents {
     private val userEvents = mutableSetOf<UserEvent>()
 
     override fun findBy(eventId: String, userId: String): Maybe<UserEvent> {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        return Maybe.create { emitter ->
+            val userEvent = userEvents.find { it.eventId == eventId && it.userId == userId }
+            if (userEvent != null) emitter.onSuccess(userEvent)
+            emitter.onComplete()
+        }
     }
 
     override fun add(userEvent: UserEvent): Completable {
@@ -21,11 +25,15 @@ class InMemoryUserEvents : UserEvents {
     }
 
     override fun remove(eventId: String, userId: String): Completable {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        return Completable.fromAction {
+            userEvents.removeIf { eventId == it.eventId && userId == it.userId }
+        }
     }
 
     override fun findBy(userId: String): Single<List<UserEvent>> {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        return Single.fromCallable {
+            userEvents.filter { it.userId == userId }
+        }
     }
 
 }

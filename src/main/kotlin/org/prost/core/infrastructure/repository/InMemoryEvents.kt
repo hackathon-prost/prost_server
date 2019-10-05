@@ -8,7 +8,12 @@ import org.prost.core.domain.error.EventNotFoundException
 
 class InMemoryEvents : Events {
 
-    private val events = mutableMapOf<String, Event>()
+    private val events = mutableMapOf<String, Event>(
+        Pair("anEventId", Event("anEventId", "anOrganizationId", "Help the Earth", "Right we are experimenting a really dangerous climate change, we need you to stop this once for all", 1570308421049, 1571172461239, "https://images.newscientist.com/wp-content/uploads/2019/06/14160432/screenshot-2019-06-14-16.01.48.jpg")),
+        Pair("anEventId2", Event("anEventId", "anOrganizationId", "Be careful with the air", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.", 1570308421049, 1571172461239, "https://images.newscientist.com/wp-content/uploads/2019/06/14160432/screenshot-2019-06-14-16.01.48.jpg")),
+        Pair("anEventId3", Event("anEventId", "anOrganizationId1", "Save the animals", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.", 1570308421049, 1571172461239, "https://images.newscientist.com/wp-content/uploads/2019/06/14160432/screenshot-2019-06-14-16.01.48.jpg")),
+        Pair("anEventId4", Event("anEventId", "anOrganizationId1", "Adopt a dog", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.", 1570308421049, 1571172461239, "https://images.newscientist.com/wp-content/uploads/2019/06/14160432/screenshot-2019-06-14-16.01.48.jpg"))
+    )
 
     override fun add(event: Event): Completable {
         return Completable.fromAction {
