@@ -9,8 +9,11 @@ private val logger = LoggerFactory.getLogger(Routes.javaClass.canonicalName)
 
 object Routes {
     fun register(router: Router) {
-        router.use(GreetHandler(Actions.greet))
-        router.use(GreetPrivateHandler(Actions.greet))
+        router.use(CreateUserHandler(Actions.createUser))
+        router.use(LoginUserHandler(Actions.loginUser))
+        router.use(CreateOrganizationHandler(Actions.createOrganization))
+        router.use(LoginOrganizationHandler(Actions.loginOrganization))
+        router.use(CreateEventHandler(Actions.createEvent))
 
         // Endpoints for health check, Prometheus metrics and versions info.
         router.use(HealthCheckHandler())

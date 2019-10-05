@@ -10,6 +10,6 @@ object Banner {
             "                                                            \n"
 
     fun print() {
-        println(org.prost.config.Banner.TEXT)
+        println(TEXT)
     }
 }

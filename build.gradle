@@ -24,6 +24,7 @@ ext {
     sentryVersion = '1.2.2'
     jacksonDatabindVersion = '2.9.8'
     postgresVersion = '42.2.8'
+    jodaTimeVersion = '2.10.4'
 }
 
 dependencies {
@@ -39,6 +40,8 @@ dependencies {
     compile "io.vertx:vertx-web:$vertxVersion"
     compile "io.vertx:vertx-rx-java2:$vertxVersion"
     compile "org.postgresql:postgresql:$postgresVersion"
+    compile "joda-time:joda-time:$jodaTimeVersion"
+
 }
 
 dependencies {
