@@ -1,5 +1,6 @@
 package org.prost.http.mapper
 
+import io.vertx.core.json.JsonArray
 import io.vertx.core.json.JsonObject
 import org.prost.core.domain.Event
 import org.prost.core.domain.Organization
@@ -29,7 +30,7 @@ fun User.toJson(): JsonObject {
         .put(PHONE, phone)
         .put(DESCRIPTION, description)
         .put(BIRTHDAY, birthday)
-        .put(INTERESTS, interests)
+        .put(INTERESTS, JsonArray(interests))
 }
 
 fun Organization.toJson(): JsonObject {

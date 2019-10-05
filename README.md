@@ -17,3 +17,70 @@ This is a service for the App Prost
 ```
 PORT /* Listen HTTP port. Default: 9090 */
 ```
+
+## API DOC
+
+### Common Error Message
+```json
+{
+  "error": {
+    "code": "MODULE_XXXX",
+    "message": "ERROR DESCRIPTION"
+  }
+}
+```
+
+### Register a User
+```
+/prost/api/user
+```
+Request Body
+```json
+{
+	"name": "STRING",
+	"lastName": "STRING",
+	"email": "STRING",
+	"password": "STRING",
+	"phone": "STRING",
+	"description": "STRING",
+	"birthday": LONG,
+	"interests": STRING[]
+}
+```
+
+Response Created 201
+```json
+{
+    "id": "STRING", 
+    "name": "STRING",
+    "lastName": "STRING",
+    "email": "STRING",
+    "phone": "STRING",
+    "description": "STRING",
+    "birthday": LONG,
+    "interests": STRING[]
+}
+```
+
+### Login User
+```json
+{
+  "email": "STRING",
+  "password": "STRING"
+}
+```
+
+Response Ok 200
+```json
+{
+    "id": "STRING", 
+    "name": "STRING",
+    "lastName": "STRING",
+    "email": "STRING",
+    "phone": "STRING",
+    "description": "STRING",
+    "birthday": LONG,
+    "interests": STRING[]
+}
+```
+

@@ -21,4 +21,10 @@ object Actions {
     val getOrganizationsByName by lazy { GetOrganizationsByName(Repositories.organizations) }
 
     val getEvents by lazy { GetEvents(Repositories.events) }
+
+    val getEvent by lazy { GetEvent(Repositories.events) }
+
+    val getEventsOrganization by lazy { GetEventsOrganization(Repositories.events, Repositories.organizations) }
+
+    val getEventsByName by lazy { GetEventsByName(Repositories.events) }
 }
