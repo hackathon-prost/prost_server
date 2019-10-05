@@ -9,4 +9,5 @@ interface Events {
     fun find(id: String): Single<Event>
     fun findByName(name: String): Single<List<Event>>
     fun findBy(organizationId: String): Single<List<Event>>
+    fun getAll(): Single<List<Event>>
 }

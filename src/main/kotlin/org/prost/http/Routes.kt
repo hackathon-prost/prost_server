@@ -14,6 +14,9 @@ object Routes {
         router.use(CreateOrganizationHandler(Actions.createOrganization))
         router.use(LoginOrganizationHandler(Actions.loginOrganization))
         router.use(CreateEventHandler(Actions.createEvent))
+        router.use(GetOrganizationsHandler(Actions.getOrganizations))
+        router.use(GetOrganizationByNameHandler(Actions.getOrganizationsByName))
+        router.use(GetEventsHandler(Actions.getEvents))
 
         // Endpoints for health check, Prometheus metrics and versions info.
         router.use(HealthCheckHandler())

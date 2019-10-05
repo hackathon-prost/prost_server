@@ -45,4 +45,8 @@ class InMemoryEvents : Events {
         }
     }
 
+    override fun getAll(): Single<List<Event>> {
+        return Single.just(events.values.toList())
+    }
+
 }

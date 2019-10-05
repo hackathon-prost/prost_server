@@ -15,4 +15,10 @@ object Actions {
 
     val createEvent by lazy { CreateEvent(Repositories.events, Repositories.organizations,
         Services.idGenerator, Services.clock) }
+
+    val getOrganizations by lazy { GetOrganizations(Repositories.organizations) }
+
+    val getOrganizationsByName by lazy { GetOrganizationsByName(Repositories.organizations) }
+
+    val getEvents by lazy { GetEvents(Repositories.events) }
 }
